@@ -37,8 +37,10 @@
             <tr>
               <td><%= story.priority %></td>
               <td>
-                <div class="<%= story.status %>">
-                  <p><%= story.title %></p>
+                <div class="story-<%= story.status %>">
+                  <p>
+                    <a href="<%= @mantis_url %>/view.php?id=<%= story.id %>"><%= story.title %></a>
+                  </p>
                   <p>P: <%= story.points %></p>
                 </div>
               </td>
@@ -48,7 +50,7 @@
                 <% story.get_todo.each_slice(2) do |slice| %>
                   <div class="row">
                     <% slice.each do |task| %>
-                      <div class="col-md-6"><div class="task">
+                      <div class="col-md-6"><div class="task-todo">
                         <p>
                           <%= task.assigned %>
                         </p>
@@ -64,7 +66,7 @@
                 <% story.get_wip.each_slice(2) do |slice| %>
                 <div class="row">
                   <% slice.each do |task| %>
-                  <div class="col-md-6"><div class="WIP">
+                  <div class="col-md-6"><div class="task-wip">
                     <h5>
                       <%= task.assigned %>
                     </h5>
@@ -80,7 +82,7 @@
                 <% story.get_resolved.each_slice(2) do |slice| %>
                 <div class="row">
                   <% slice.each do |task| %>
-                  <div class="col-md-6"><div class="task">
+                  <div class="col-md-6"><div class="task-done">
                     <p>
                       <%= task.assigned %>
                     </p>

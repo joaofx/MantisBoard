@@ -6,7 +6,16 @@
   font-size: 8pt;
 }
 
-.task {
+#board a {
+  color: #fff;
+}
+
+.board a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.story-ToDo, .task-todo {
     background-color: #255a85;
     padding: .2em .6em .3em;
     color: #fff;
@@ -15,7 +24,7 @@
     margin-bottom: 5px;
 }
 
-.ToDo {
+.task-done {
   background-color: #626262;
   padding: .2em .6em .3em;
   color: #fff;
@@ -24,7 +33,7 @@
   margin-bottom: 5px;
 }
 
-.WIP {
+.story-WIP, .task-wip {
   background-color: #957e00;
   padding: .2em .6em .3em;
   color: #fff;
@@ -33,7 +42,7 @@
   margin-bottom: 5px;
 }
 
-.Resolved {
+.story-Resolved {
   background-color: #096109;
   padding: .2em .6em .3em;
   color: #fff;
