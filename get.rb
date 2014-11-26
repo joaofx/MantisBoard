@@ -5,8 +5,8 @@ require "yaml"
 
 user = ARGV[0]
 password = ARGV[1]
-mantis_url = "http://serv240/mantis_scrum"
 project = ARGV[2]
+mantis_url = ARGV[3]
 
 mantis = Mantis.new(mantis_url)
 mantis.login(user, password)

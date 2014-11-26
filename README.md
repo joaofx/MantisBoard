@@ -3,7 +3,7 @@ First create a filter named 'Current Sprint' to view just current sprint stories
 Then call get.rb to get stories and tasks
 
 ```
-ruby get.rb MantisUserName MantisUserPassword MantisProjectName
+ruby get.rb MantisUserName MantisUserPassword MantisProjectName MantisUrl
 ```
 
 A file named stories.yaml will be created
