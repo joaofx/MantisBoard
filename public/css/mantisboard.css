@@ -1,0 +1,43 @@
+* {
+  font-family: tahoma;
+}
+
+.task-view {
+  font-size: 8pt;
+}
+
+.task {
+    background-color: #255a85;
+    padding: .2em .6em .3em;
+    color: #fff;
+    text-align: center;
+    border-radius: .25em;
+    margin-bottom: 5px;
+}
+
+.ToDo {
+  background-color: #626262;
+  padding: .2em .6em .3em;
+  color: #fff;
+  text-align: center;
+  border-radius: .25em;
+  margin-bottom: 5px;
+}
+
+.WIP {
+  background-color: #957e00;
+  padding: .2em .6em .3em;
+  color: #fff;
+  text-align: center;
+  border-radius: .25em;
+  margin-bottom: 5px;
+}
+
+.Resolved {
+  background-color: #096109;
+  padding: .2em .6em .3em;
+  color: #fff;
+  text-align: center;
+  border-radius: .25em;
+  margin-bottom: 5px;
+}

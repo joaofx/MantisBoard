@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>MantisBoard</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/mantisboard.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="row">
+      <h2>Sprint 3</h2>
+    </div>
+
+    <div class="row">
+
+        <table id="board" class="table table-bordered table-striped">
+          <tr>
+            <th style="width: 10px">P</th>
+            <th style="width: 25%">Story</th>
+            <th style="width: 25%">Todo</th>
+            <th style="width: 25%">WIP</th>
+            <th style="width: 25%">Done</th>
+          </tr>
+
+          <% @stories.each do |story| %>
+
+            <tr>
+              <td><%= story.priority %></td>
+              <td>
+                <div class="<%= story.status %>">
+                  <p><%= story.title %></p>
+                  <p>P: <%= story.points %></p>
+                </div>
+              </td>
+
+              <!-- todo -->
+              <td class="task-view">
+                <% story.get_todo.each_slice(2) do |slice| %>
+                  <div class="row">
+                    <% slice.each do |task| %>
+                      <div class="col-md-6"><div class="task">
+                        <p>
+                          <%= task.assigned %>
+                        </p>
+                        <%= task.title %>
+                      </div></div>
+                    <% end %>
+                  </div>
+                <% end %>
+              </td>
+
+              <!-- wip -->
+              <td class="task-view">
+                <% story.get_wip.each_slice(2) do |slice| %>
+                <div class="row">
+                  <% slice.each do |task| %>
+                  <div class="col-md-6"><div class="WIP">
+                    <h5>
+                      <%= task.assigned %>
+                    </h5>
+                    <%= task.title %>
+                  </div></div>
+                  <% end %>
+                </div>
+                <% end %>
+              </td>
+
+              <!-- resolved -->
+              <td class="task-view">
+                <% story.get_resolved.each_slice(2) do |slice| %>
+                <div class="row">
+                  <% slice.each do |task| %>
+                  <div class="col-md-6"><div class="task">
+                    <p>
+                      <%= task.assigned %>
+                    </p>
+                    <%= task.title %>
+                  </div></div>
+                  <% end %>
+                </div>
+                <% end %>
+              </td>
+
+            </tr>
+
+          <% end %>
+
+        </table>
+
+    </div>
+
+    <hr>
+
+  </div>
+
+</body>
+</html>
