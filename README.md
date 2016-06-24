@@ -1,12 +1,12 @@
 # MantisBoard
 
-Tool that creates a Kanban board view for Mantis.
+Tool that creates a Kanban board view from a Mantis.
 
 Warning: It was developed for my past job that had a customized version of Mantis. You might can adapt the get.rb file to import tickets from your Mantis
 
 ### Setup
 
-After clone, run:
+After clone, download gem packages running:
 
 ```
 bundle install
@@ -14,7 +14,7 @@ bundle install
 
 ### Load Fake Stories
 
-Run:
+If you don't have a Mantis installed, you can create fake stories running:
 
 ```
 ruby fake_stories.rb
